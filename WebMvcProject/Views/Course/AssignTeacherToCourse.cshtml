@@ -1,0 +1,46 @@
+﻿@using WebMvcProject.Data
+
+@{
+    ViewData["Title"] = "AssignTeacherToCourse";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1>Eğitmen Ata</h1>
+<br />
+<br />
+
+@model CourseTeacherViewModel
+
+<form asp-controller="Course" asp-action="AssignTeacherToCourse" method="post">
+    <div class="mb-3">
+        @Html.ValidationSummary()
+    </div>
+    <div class="mb-3">
+        <label for="browser">Kurs</label>
+        @*Post işleminde disable olan editör üzerindeki değerin controller'a taşınabilmesi için HiddenFor ile ekleme yapılınıyor.*@
+        @Html.HiddenFor(model => model.CourseId)
+        <select asp-for="CourseId" disabled class="form-control" value="@Model.CourseId">
+            <option value="" selected>Kurs Seçiniz</option>
+            @foreach (var item in (List<Course>)ViewBag.Courses)
+            {
+                <option value="@item.Id">@item.Name</option>
+            }
+        </select>
+        <span asp-validation-for="CourseId"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Öğretmen</label>
+        <select class="form-control" asp-for="TeacherId">
+            <option value="" selected>Eğitmen Seçiniz</option>
+            @foreach (var item in (List<Teacher>)ViewBag.Teachers)
+            {
+                <option value="@item.Id">@item.Name @item.Surname</option>
+            }
+        </select>
+        <span asp-validation-for="TeacherId"></span>
+    </div>
+
+    <input class="btn btn-success" type="submit" value="Kaydet" />
+    <a asp-controller="Course" asp-action="Index" class="btn btn-primary">Vazgeç</a>
+</form>

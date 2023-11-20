@@ -1,0 +1,33 @@
+﻿@using WebMvcProject.Data
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+@model Teacher
+<h1>Öğretmen bilgilerini güncelle</h1>
+<br />
+<br />
+<form class="container" method="post" asp-controller="Teacher" asp-action="Update">
+    <div class="mb-3">
+        <label class="form-label">Sicil No</label>
+        <input asp-for="RegistrationNumber" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Ad</label>
+        <input asp-for="Name" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Soyad</label>
+        <input asp-for="Surname" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Telefon</label>
+        <input asp-for="PhoneNumber" type="text" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Güncelle</button>
+    <a asp-controller="Teacher" asp-action="Index" class="btn btn-primary">Vazgeç</a>
+</form>
+

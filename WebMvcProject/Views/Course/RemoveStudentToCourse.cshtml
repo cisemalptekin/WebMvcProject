@@ -1,0 +1,43 @@
+﻿@model WebMvcProject.Data.StudentCourse
+
+@{
+    ViewData["Title"] = "RemoveStudentToCourse";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1>RemoveStudentToCourse</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>StudentCourse</h4>
+    <hr />
+    <dl class="row">
+        @Html.HiddenFor(model => model.StudentCourseId)
+        @Html.HiddenFor(model => model.StudentId)
+        @Html.HiddenFor(model => model.CourseId)
+        <dt class="col-sm-2">
+            Kurs
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Course.Name)
+        </dd>
+        <dt class="col-sm-2">
+            Adı
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Student.Name)
+        </dd>
+        <dt class="col-sm-2">
+            Soyadı
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Student.Surname)
+        </dd>
+    </dl>
+
+    <form asp-action="RemoveStudentToCourse">
+        <input type="submit" value="Delete" class="btn btn-success" /> |
+        <a asp-controller="Course" asp-action="Index" class="btn btn-primary">Vazgeç</a>
+    </form>
+</div>
+

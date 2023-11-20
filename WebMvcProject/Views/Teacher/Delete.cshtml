@@ -1,0 +1,30 @@
+﻿@using WebMvcProject.Data
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+@model Teacher
+<h1>Öğretmen Sil</h1>
+<br />
+<br />
+<div class="container">
+    <div class="card mt-2">
+        <div class="card-header bg-primary text-white">
+            <h3>Kayıt Silme İşlemi</h3>
+        </div>
+        <div class="card-body">
+            @Model.Name @Model.Surname.ToUpper() @Model.PhoneNumber Kaydını Silmek İstediğinize Emin Misiniz ?
+
+        </div>
+        <div class="card-footer">
+            <form method="post" asp-controller="Teacher" asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <button class="btn btn-success" type="submit">Sil</button>
+                <a asp-controller="Teacher" asp-action="Index" class="btn btn-primary">Vazgeç</a>
+            </form>
+        </div>
+    </div>
+</div>
+

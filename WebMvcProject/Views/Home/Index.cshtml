@@ -1,0 +1,469 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model RegisterViewModel
+
+<section id="hero" class="position-relative overflow-hidden py-4" style="background: url(images/banner-img.png);">
+    <!-- <div class="pattern-overlay pattern-right position-absolute">
+        <img src="images/pattern-hero.png" alt="pattern">
+    </div> -->
+    @if (ViewBag.IsRegisterVisible)
+    {
+        <div class="container py-5 mt-5">
+            <div class="row align-items-center py-5 mt-5">
+                <div class="col-md-6 mb-5 mb-md-0">
+                    <h6 class="text-white">SOFTWARE DEVELOPMENT ACADEMY</h6>
+                    <h2 class="text-white fw-bold display-2">Software Development Academy çünkü...</h2>
+                    <p class="text-white">
+                        Alanında uzman eğitim kadrosuyla ve yenilikçi
+                        Yazılımcı Geliştirme eğitimleriyle sende kendinin en iyi versiyonu olabilirsin.
+                    </p>
+                    <ul class="list-unstyled">
+                        <li class="text-white fw-bold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"
+                                 fill="none">
+                                <g clip-path="url(#clip0_1_359)">
+                                    <path d="M11.5 0.359375C5.34719 0.359375 0.359375 5.34719 0.359375 11.5C0.359375 17.6528 5.34719 22.6406 11.5 22.6406C17.6528 22.6406 22.6406 17.6528 22.6406 11.5C22.6406 5.34719 17.6528 0.359375 11.5 0.359375ZM11.5 2.51562C16.4653 2.51562 20.4844 6.53393 20.4844 11.5C20.4844 16.4653 16.4661 20.4844 11.5 20.4844C6.5347 20.4844 2.51562 16.4661 2.51562 11.5C2.51562 6.5347 6.53393 2.51562 11.5 2.51562ZM17.7982 8.36746L16.7859 7.34693C16.5762 7.13557 16.2349 7.13418 16.0235 7.34387L9.67375 13.6426L6.98778 10.9349C6.77813 10.7235 6.43681 10.7221 6.22545 10.9318L5.20487 11.9441C4.99352 12.1538 4.99212 12.4951 5.20182 12.7065L9.27987 16.8176C9.48952 17.0289 9.83084 17.0303 10.0422 16.8206L17.7952 9.12983C18.0065 8.92014 18.0079 8.57882 17.7982 8.36746Z"
+                                          fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_1_359">
+                                        <rect width="23" height="23" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            Tüm eğitimlerimiz uygulama temelli
+                        </li>
+                        <li class="text-white fw-bold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"
+                                 fill="none">
+                                <g clip-path="url(#clip0_1_359)">
+                                    <path d="M11.5 0.359375C5.34719 0.359375 0.359375 5.34719 0.359375 11.5C0.359375 17.6528 5.34719 22.6406 11.5 22.6406C17.6528 22.6406 22.6406 17.6528 22.6406 11.5C22.6406 5.34719 17.6528 0.359375 11.5 0.359375ZM11.5 2.51562C16.4653 2.51562 20.4844 6.53393 20.4844 11.5C20.4844 16.4653 16.4661 20.4844 11.5 20.4844C6.5347 20.4844 2.51562 16.4661 2.51562 11.5C2.51562 6.5347 6.53393 2.51562 11.5 2.51562ZM17.7982 8.36746L16.7859 7.34693C16.5762 7.13557 16.2349 7.13418 16.0235 7.34387L9.67375 13.6426L6.98778 10.9349C6.77813 10.7235 6.43681 10.7221 6.22545 10.9318L5.20487 11.9441C4.99352 12.1538 4.99212 12.4951 5.20182 12.7065L9.27987 16.8176C9.48952 17.0289 9.83084 17.0303 10.0422 16.8206L17.7952 9.12983C18.0065 8.92014 18.0079 8.57882 17.7982 8.36746Z"
+                                          fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_1_359">
+                                        <rect width="23" height="23" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            Eğitmenlerimiz proje deneyimine sahip
+                        </li>
+                        <li class="text-white fw-bold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"
+                                 fill="none">
+                                <g clip-path="url(#clip0_1_359)">
+                                    <path d="M11.5 0.359375C5.34719 0.359375 0.359375 5.34719 0.359375 11.5C0.359375 17.6528 5.34719 22.6406 11.5 22.6406C17.6528 22.6406 22.6406 17.6528 22.6406 11.5C22.6406 5.34719 17.6528 0.359375 11.5 0.359375ZM11.5 2.51562C16.4653 2.51562 20.4844 6.53393 20.4844 11.5C20.4844 16.4653 16.4661 20.4844 11.5 20.4844C6.5347 20.4844 2.51562 16.4661 2.51562 11.5C2.51562 6.5347 6.53393 2.51562 11.5 2.51562ZM17.7982 8.36746L16.7859 7.34693C16.5762 7.13557 16.2349 7.13418 16.0235 7.34387L9.67375 13.6426L6.98778 10.9349C6.77813 10.7235 6.43681 10.7221 6.22545 10.9318L5.20487 11.9441C4.99352 12.1538 4.99212 12.4951 5.20182 12.7065L9.27987 16.8176C9.48952 17.0289 9.83084 17.0303 10.0422 16.8206L17.7952 9.12983C18.0065 8.92014 18.0079 8.57882 17.7982 8.36746Z"
+                                          fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_1_359">
+                                        <rect width="23" height="23" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            Müfredatımız sektör ihtiyaçlarına yönelik
+                        </li>
+                        <li class="text-white fw-bold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"
+                                 fill="none">
+                                <g clip-path="url(#clip0_1_359)">
+                                    <path d="M11.5 0.359375C5.34719 0.359375 0.359375 5.34719 0.359375 11.5C0.359375 17.6528 5.34719 22.6406 11.5 22.6406C17.6528 22.6406 22.6406 17.6528 22.6406 11.5C22.6406 5.34719 17.6528 0.359375 11.5 0.359375ZM11.5 2.51562C16.4653 2.51562 20.4844 6.53393 20.4844 11.5C20.4844 16.4653 16.4661 20.4844 11.5 20.4844C6.5347 20.4844 2.51562 16.4661 2.51562 11.5C2.51562 6.5347 6.53393 2.51562 11.5 2.51562ZM17.7982 8.36746L16.7859 7.34693C16.5762 7.13557 16.2349 7.13418 16.0235 7.34387L9.67375 13.6426L6.98778 10.9349C6.77813 10.7235 6.43681 10.7221 6.22545 10.9318L5.20487 11.9441C4.99352 12.1538 4.99212 12.4951 5.20182 12.7065L9.27987 16.8176C9.48952 17.0289 9.83084 17.0303 10.0422 16.8206L17.7952 9.12983C18.0065 8.92014 18.0079 8.57882 17.7982 8.36746Z"
+                                          fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_1_359">
+                                        <rect width="23" height="23" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            Eğitim altyapımız uluslararası standartlarda
+                        </li>
+                    </ul>
+                </div>
+                <div class=" col-md-5 offset-md-1">
+                    <form class="hero-form p-5" method="post" asp-controller="Account" asp-action="Register">
+                        <h3>Kayıt Ol</h3>
+
+                        <div class="mb-4">
+                            <label for="exampleInputEmail1" class="form-label mb-0">Ad</label>
+                            <input type="text" class="form-control border-0" asp-for="Name" class="form-control" id="floatingUsername" />
+                            <span asp-validation-for="Name"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail2" class="form-label mb-0">Soyad</label>
+                            <input type="text" class="form-control border-0" asp-for="SurName" class="form-control" id="floatingUsername" />
+                            <span asp-validation-for="SurName"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail2" class="form-label mb-0">Kullanıcı Adı</label>
+                            <input type="text" class="form-control border-0" asp-for="UserName" class="form-control" id="floatingUsername" />
+                            <span asp-validation-for="UserName"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail3" class="form-label mb-0">E-Posta</label>
+                            <input type="email" class="form-control border-0" asp-for="EmailAddress" class="form-control" id="floatingEmail" />
+                            <span asp-validation-for="EmailAddress"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail3" class="form-label mb-0">Şifre</label>
+                            <input type="password" class="form-control border-0" asp-for="Password" class="form-control" id="floatingPassword" />
+                            <span asp-validation-for="Password"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail3" class="form-label mb-0">Şifre Tekrar</label>
+                            <input type="password" class="form-control border-0" asp-for="RePassword" class="form-control" id="floatingPasswordAgain" />
+                            <span asp-validation-for="RePassword"></span>
+                        </div>
+
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-secondary btn-lg">Kayıt Ol</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    }
+</section>
+
+<section id="partners">
+    <div class="container my-5 py-5">
+        <h6 class="fw-bold text-capitalize fs-5 my-5">
+            Eğitim Tercihinizi Yapın, Teknolojiyi Öğrenmeye Başlayın
+        </h6>
+        <div class="row">
+            <div class="logo-content d-flex flex-wrap justify-content-between">
+                <a href="#" class="mb-5 mx-2">
+                    <img src="images/logo1.jpg" alt="logo" class="logo-image img-fluid">
+                </a>
+                <a href="#" class="mb-5 mx-2">
+                    <img src="images/logo2.jpg" alt="logo" class="logo-image img-fluid">
+                </a>
+                <a href="#" class="mb-5 mx-2">
+                    <img src="images/logo3.jpg" alt="logo" class="logo-image img-fluid">
+                </a>
+                <a href="#" class="mb-5 mx-2">
+                    <img src="images/logo4.jpg" alt="logo" class="logo-image img-fluid">
+                </a>
+                <a href="#" class="mb-5 mx-2">
+                    <img src="images/logo5.jpg" alt="logo" class="logo-image img-fluid">
+                </a>
+                <a href="#" class="mb-5 mx-2">
+                    <img src="images/logo6.jpg" alt="logo" class="logo-image img-fluid">
+                </a>
+                <a href="#" class="mb-5 mx-2">
+                    <img src="images/logo7.jpg" alt="logo" class="logo-image img-fluid">
+                </a>
+                <a href="#" class="mb-5 mx-2">
+                    <img src="images/logo8.jpg" alt="logo" class="logo-image img-fluid">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="my-5 pt-5">
+    <div class="container pt-5">
+        <h6 class=""></h6>
+        <h2 class="display-4 mb-4" style="font-size: 24px; font-weight: bold; text-transform: none; text-align: center;">Kariyeriniz için gerekli her şey Software Development Academy'de</h2>
+        <div class="row">
+            <div class=" mt-4 col-md-6 col-lg-3">
+                <div class="services-components text-center py-5 px-3">
+                    <img src="images/icon1.png" alt="logo" class="logo-image">
+                    <h5 class="services-heading mb-3">Neden Software Development Academy</h5>
+                    <p>
+                        Türkiye’nin resmi kurumları ve özel sektördeki pek çok kuruluş tarafından tercih edilen Software Development Academy, eğitimde fırsat eşitliği anlayışına sahip olarak, bireylerin ve kurumların hedeflerini, kendi hedefi olarak kabul ederek çalışır.
+                    </p>
+                    @*<a href="services-single.html" class="btn btn-primary service-btn mt-3">read more</a>*@
+
+                </div>
+            </div>
+            <div class=" mt-4 col-md-6 col-lg-3">
+                <div class="services-components text-center py-5 px-3">
+                    <img src="images/icon2.png" alt="logo" class="logo-image">
+                    <h5 class="services-heading mb-3">İnsan Kaynakları</h5>
+                    <p>
+                        Software Development Academy’nin, "insan"’a verdiği değer nedeniyle, İnsan Kaynakları biriminin rolü önemlidir.
+                    </p>
+                    @*   <a href="services-single.html" class="btn btn-primary service-btn mt-3">read more</a>*@
+
+                </div>
+            </div>
+            <div class=" mt-4 col-md-6 col-lg-3">
+                <div class="services-components text-center py-5 px-3">
+                    <img src="images/icon3.png" alt="logo" class="logo-image">
+                    <h5 class="services-heading mb-3">Öğrenci İşleri</h5>
+                    <p>
+                        Katılımcılarının eğitim sonrasındaki iş bulma arayışları için; uzman ‘Öğrenci İşleri’ Departmanı staj ve iş desteği sunar.
+                    </p>
+                    @*  <a href="services-single.html" class="btn btn-primary service-btn mt-3">read more</a>*@
+
+                </div>
+            </div>
+            <div class=" mt-4 col-md-6 col-lg-3">
+                <div class="services-components text-center py-5 px-3">
+                    <img src="images/icon4.png" alt="logo" class="logo-image">
+                    <h5 class="services-heading mb-3">İş & Staj Garantisi</h5>
+                    <p>
+                        Katılımcılarının eğitim başlangıcından bitimine ve sonrasındaki ihtiyaçları için; uzman ‘Öğrenci İşleri’ Departmanı oluşturulmuştur.
+                    </p>
+                    @*  <a href="services-single.html" class="btn btn-primary service-btn mt-3">read more</a>*@
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container py-5">
+        <div class="row align-items-center py-5">
+            <div class=" col-md-6 ps-md-5">
+                <img src="images/about-img.jpg" alt="image" class="img-fluid">
+            </div>
+            <div class="col-md-6 px-4 py-5">
+                <h6 class="">Biz kimiz</h6>
+                <h2 class=" fw-bold font-size:14px display-4 mb-3">SOFTWARE DEVELOPMENT ACADEMY</h2>
+                <p class="">
+                    İş yaşamında kullanılan yazılımlar ve teknolojiler üzerine eğitim veren Software Development Academy, alanında Türkiye’nin en köklü ve en büyük kurumudur. Sadece teorik değil, pratik tecrübeye de sahip eğitmenleri ile sıkıcı olmayan, uygulamaya yönelik ve keyifli eğitimler verir. Binlerce mezunuyla Türkiye’nin en çok tercih edilen teknoloji eğitimleri kurumu olan Software Development Academy, bireysel ve kurumsal eğitimlerini İstanbul (Kadıköy, Maslak) ve Ankara‘daki 3 şubesinde sürdürmektedir.
+                    Microsoft tarafından 10 kez “Yılın Eğitim Çözümleri İş Ortağı” seçilen Software Development Academy, ayrıca Leading Learning Partner Association’ın (LLPA) her biri kendi ülkesinin önde gelen IT eğitim kurumları olan 50 üyesinden biridir.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+
+    <div class="container-fluid my-5 pt-5 p-0 ">
+        <h6 class="text-center text-white mt-5">Our works</h6>
+        <h2 class="text-center text-white fw-bold display-4 mb-5 " style="text-transform: none;">Eğitim İçeriklerimizden Bazıları</h2>
+        <div class="mb-4">
+            <p class="text-center">
+                <button class="filter-button px-3 me-2 mb-3 active" data-filter="*">All</button>
+                <button class="filter-button px-3 me-2 mb-3" data-filter=".roof">Unity</button>
+                <button class="filter-button px-3 me-2 mb-3" data-filter=".install">Microsoft</button>
+                <button class="filter-button px-3 me-2 mb-3" data-filter=".solar">Java</button>
+                <button class="filter-button px-3 me-2 mb-3" data-filter=".repair">Python</button>
+            </p>
+        </div>
+        <div class="isotope-container">
+            <div class="col-md-2 item roof">
+                <a href="#"><img src="images/project6.jpg" alt="image" class="img-fluid"></a>
+                <div class="description text-center px-3 py-5">
+                    @*<h6 class="project-date my-3 pt-3 fs-6">Feb 3, 2023</h6>*@
+                    <h3 class="project-heading mb-3">EĞİTİMLER</h3>
+                    @* <a href="project-single.html" class="btn btn-primary mt-3">Derse git</a>*@
+                </div>
+            </div>
+            <div class="col-md-2 item solar">
+                <a href="#"><img src="images/project2.jpg" alt="image" class="img-fluid"></a>
+                <div class="description text-center px-3 py-5">
+                    @*<h6 class="project-date my-3 pt-3 fs-6">Feb 3, 2023</h6>*@
+                    <h3 class="project-heading mb-3">Java</h3>
+                    @*<a href="project-single.html" class="btn btn-primary mt-3">Derse git</a>*@
+                </div>
+            </div>
+            <div class="col-md-2 item repair">
+                <a href="#"><img src="images/project3.jpg" alt="image" class="img-fluid"></a>
+                <div class="description text-center px-3 py-5">
+                    @* <h6 class="project-date my-3 pt-3 fs-6">Feb 3, 2023</h6>*@
+                    <h3 class="project-heading mb-3">Python</h3>
+                    @*<a href="project-single.html" class="btn btn-primary mt-3">Derse git</a>*@
+                </div>
+            </div>
+            <div class="col-md-2 item roof">
+                <a href="#"><img src="images/project4.jpg" alt="image" class="img-fluid"></a>
+                <div class="description text-center px-3 py-5">
+                    @*<h6 class="project-date my-3 pt-3 fs-6">Feb 3, 2023</h6>*@
+                    <h3 class="project-heading mb-3">Unity</h3>
+                    @*<a href="project-single.html" class="btn btn-primary mt-3">Derse git</a>*@
+                </div>
+            </div>
+            <div class="col-md-2 item install">
+                <a href="#"><img src="images/project5.jpg" alt="image" class="img-fluid"></a>
+                <div class="description text-center px-3 py-5">
+                    @*<h6 class="project-date my-3 pt-3 fs-6">Feb 3, 2023</h6>*@
+                    <h3 class="project-heading mb-3">Excel</h3>
+                    @*<a href="project-single.html" class="btn btn-primary mt-3">Derse git</a>*@
+                </div>
+            </div>
+            <div class="col-md-2 item install">
+                <a href="#"><img src="images/project1.jpg" alt="image" class="img-fluid"></a>
+                <div class="description text-center px-3 py-5">
+                    @*<h6 class="project-date my-3 pt-3 fs-6">Feb 3, 2023</h6>*@
+                    <h3 class="project-heading mb-3">Microsoft</h3>
+                    @*<a href="project-single.html" class="btn btn-primary mt-3">Derse git</a>*@
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+<section id="faq">
+
+    <div class="container my-5 pb-5 ">
+        <h6 class="text-center"></h6>
+        <h2 class="text-center fw-bold display-4 mb-5">Software Development Academy</h2>
+
+        <div class="accordion col-md-8 offset-md-2" id="accordionPanelsStayOpenExample">
+
+            <div class="accordion-item mt-3">
+                <h5 class="accordion-header border-0" id="panelsStayOpen-headingOne">
+                    <button class="accordion-button fs-5" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                            aria-controls="panelsStayOpen-collapseOne">
+                        Python yazılım Eğitimine Kimler Katılmalı?
+                    </button>
+                </h5>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        <p>
+                            Python, yorumlanmış bir üst düzey programlama dilidir.
+                            Genel amaçlı olarak tasarlanmıştır.
+                            Nesneye yönelik, prosedürel, zorunlu, fonksiyonel ve yansıtıcı gibi birçok programlama paradigmasını destekler.
+                            Python son derece çok yönlü bir dildir.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                    <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseTwo">
+                        Java Android Kursu Eğitimine Kimler Katılmalı?
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                     aria-labelledby="panelsStayOpen-headingTwo">
+                    <div class="accordion-body">
+                        <p>
+                            Java android eğitiminde, mobil uygulamalar artık hayatımızın değişmez bir parçası. Kullandığımız tüm araçlar bir uygulamya sahip. 
+                            java dilini kullanarak mobil uygulama geliştirme, geleceğin en değerli meslekleri arasına girmektedir. Dolayısıyla mobil
+                            uygulama geliştirmek isteyen herkes katılmalıdır.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                    <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseThree">
+                        Csharp Eğitimine Kimler Katılmalı?
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                     aria-labelledby="panelsStayOpen-headingThree">
+                    <div class="accordion-body">
+                        <p>
+                            C#'ı gerçek dünya problemleri üzerinden öğrenmeyi arzulayanlar
+                            Yazılım dünyasına ilk adımını atmak isteyenler
+                            Önceden programlama dünyasına adım atmış olan ve kendini geliştirmeyi hedefleyenler
+                            Nesne tabanlı programlama bilgisini tazelemeyi amaçlayan herkes
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                    <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseFour">
+                        Unity Kursuna Kimler Katılmalı?
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+                     aria-labelledby="panelsStayOpen-headingFour">
+                    <div class="accordion-body">
+                        <p>
+                            Unity ile dileyen 2D dileyen ise 3D oyunlar yazabilir.
+                            Motorun belli bir sınırı yok, istediğiniz kadar büyüklükte Terrain'ler yaratabilir üzerinde çalışabilirsiniz.
+                            Oyun motoru ile Dileyen FPS, TPS ya da diğer bir çok Bakış Açısı ile oyunlar yazabilir.
+                            Yüzlerce seçenek arasından heyecan verici efektler seçin.
+                            Unity ile yapabileceğiniz şeyler sizin yeteneğinize ve bilginize bağlı olarak değişkenlik gösterecektir.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="blog" class="my-5 ">
+    <div class="container py-5">
+        <div class="row align-items-center ">
+            <div class="col-md-6 col-lg-3">
+                <div class="mb-3">
+                    <h6 class="">Akademi</h6>
+                    <h2 class=" fw-bold display-6 mb-3">ŞUBELERİMİZ</h2>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="mb-3">
+                    <a href="#"><img src="images/blog1.jpg" alt="image" class="img-fluid"></a>
+                    <h6 class="my-3">Maslak</h6>
+                 @*   <a href="#" class="text-decoration-none">
+                        <h5 class="mb-3">Adres</h5>
+                    </a>*@
+                    <p>
+                        Noramin İş Merkezi Kat:5 Büyükdere Caddesi No:237 Maslak – Sarıyer / İSTANBUL​
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="mb-3">
+                    <a href="#"><img src="images/blog2.jpg" alt="image" class="img-fluid"></a>
+                    <h6 class="my-3">ANKARA</h6>
+               @*     <a href="#" class="text-decoration-none">
+                        <h5 class="mb-3">Adres</h5>
+                    </a>*@
+                    <p>
+                        Ankara Teknoloji Geliştirme Bölgesi, G Blok, Üniversiteler Mahallesi Beytepe Lodumlu Köy Yolu Caddesi No:91, 06800 Bilkent Çankaya / ANKARA​​
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="mb-3">
+                    <a href="#"><img src="images/blog3.jpg" alt="image" class="img-fluid"></a>
+                    <h6 class="my-3">KADIKÖY</h6>
+@*                    <a href="#" class="text-decoration-none">
+                        <h5 class="mb-3">Adres</h5>
+                    </a>*@
+                    <p>
+                        Caferağa Mah. Mühürdar Cad. No:76 Kadıköy / İSTANBUL​
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<section id="cta" class="position-relative my-5">
+  @* "position-relative" ve "my-5" sınıflarını içerir. "my-5" sınıfı, bölümün üst ve alt kenarlarına 5 birimlik boşluk ekler.*@
+    <div class="cta-pattern-overlay pattern-left position-absolute top-50 start-0 translate-middle-y">
+        <img src="images/cta-pattern.png" alt="pattern">
+    </div>
+    <div class="container my-5 py-5">
+        <div class="row align-items-center my-3">
+            <div class="col-md-6 offset-md-2">
+                <h6 class="text-white">Şimdi Başla...</h6>
+                <h2 class="text-white fw-bold display-7">1997'den Bu Yana Bilgiyi İnsanla Buluşturuyoruz</h2>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,77 @@
+﻿@model WebMvcProject.Data.Course
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1>Kurs Silme</h1>
+<br />
+<br />
+<h3>Bu kursu silmek istediğinizden emin misiniz?</h3>
+
+<br />
+<div class="row w-100 align-items-center justify-content-center">
+    <h4>Kurs</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TotalHours)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TotalHours)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CourseTeacherId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CourseTeacherId)
+        </dd>
+    </dl>
+
+    <br />
+    <br />
+
+    <form asp-action="Delete">
+        <input type="submit" value="Sil" class="btn btn-success" />
+        <a asp-controller="Course" asp-action="Index" class="btn btn-primary">Vazgeç</a>
+        
+    </form>
+</div>
+

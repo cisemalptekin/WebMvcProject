@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+@model RegisterViewModel
+
+<div class="container">
+    <div id="msg" data-status="@(ViewBag != null && ViewBag.Message != null ? "Completed" : "NotCompleted")">@(ViewBag != null &&  ViewBag.Message != null ? "Giriş Ekranına Yönlendiriliyorsunuz..." : "")</div>
+
+    @if (ViewBag != null &&  ViewBag.Message != null)
+    {
+        <div class="alert alert-success">@ViewBag.Message</div>
+    }
+
+    <main class="form-signing">
+        <form method="post" asp-controller="Account" asp-action="Register">
+
+            <div class="form-floating">
+                <input type="text" asp-for="Name" class="form-control" id="floatingUsername" placeholder="Ad Giriniz" />
+                <label for="floatingUsername">Ad:</label>
+                <span asp-validation-for="Name"></span>
+            </div>
+
+            <div class="form-floating mt-2">
+                <input type="text" asp-for="SurName" class="form-control" id="floatingUsername" placeholder="Soyad Giriniz" />
+                <label for="floatingUsername">Soyad:</label>
+                <span asp-validation-for="SurName"></span>
+            </div>
+
+            <div class="form-floating mt-2">
+                <input type="text" asp-for="UserName" class="form-control" id="floatingUsername" placeholder="Kullanıcı Adı Giriniz" />
+                <label for="floatingUsername">Kullanıcı Adı:</label>
+                <span asp-validation-for="UserName"></span>
+            </div>
+
+            <div class="form-floating mt-2">
+                <input type="email" asp-for="EmailAddress" class="form-control" id="floatingEmail" placeholder="Kullanıcı E-Mail Giriniz" />
+                <label for="floatingEmail">Kullanıcı E-Posta:</label>
+                <span asp-validation-for="EmailAddress"></span>
+            </div>
+
+            <div class="form-floating mt-2">
+                <input type="phonenumber" asp-for="PhoneNumber" class="form-control" id="floatingPhoneNumber" placeholder="Kullanıcı Telefon Giriniz" />
+                <label for="floatingPhoneNumber">Kullanıcı Telefon:</label>
+                <span asp-validation-for="PhoneNumber"></span>
+            </div>
+
+            <div class="form-floating  mt-2">
+                <input type="password" asp-for="Password" class="form-control" id="floatingPassword" placeholder="Kullanıcı Parola Giriniz" />
+                <label for="floatingPassword">Kullanıcı Parola:</label>
+                <span asp-validation-for="Password"></span>
+            </div>
+
+            <div class="form-floating  mt-2">
+                <input type="password" asp-for="RePassword" class="form-control" id="floatingPasswordAgain" placeholder="Kullanıcı Parolayı Tekrar Giriniz" />
+                <label for="floatingPasswordAgain">Kullanıcı Parola Tekrar:</label>
+                <span asp-validation-for="RePassword"></span>
+            </div>
+
+            <button class="w-100 btn btn-primary btn btn-lg mt-4" type="submit">Kayıt Ol</button>
+        </form>
+    </main>
+
+    @section Scripts{
+        <script>
+
+            var msg = document.getElementById("msg");
+
+            if (msg.getAttribute("data-status") == "Completed") {
+                setTimeout(() => {
+                    window.location.href = "/Account/Login";
+                }, 3000)
+            }
+        </script>
+    }
+</div>
